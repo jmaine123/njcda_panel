@@ -1,0 +1,7 @@
+<h1><%=@student.full_name%></h1>
+<p><%=@student.age%></p>
+<p><%=@student.email%></p>
+<p><%=@student.created_at.strftime('%a %B %e, %Y  %l:%M%P')%></p>
+
+<p><%=link_to 'Edit', edit_student_path(@student)%></p>
+<%=link_to 'Back to Index', students_path%>

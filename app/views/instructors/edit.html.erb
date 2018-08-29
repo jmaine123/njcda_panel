@@ -1,0 +1,6 @@
+<h1><%=@instructor.full_name%></h1>
+
+<%= render 'forms'%>
+
+
+<%=link_to 'Terminate', @instructor, method: :delete, data: { confirm: "Are you sure you want to terminate #{@instructor.full_name} ?"}%>

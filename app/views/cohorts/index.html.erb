@@ -1,0 +1,8 @@
+<h1>List of all Cohorts available</h1>
+<ul>
+  <% @cohorts.each do |c|%>
+    <li><%=link_to "#{c.name}", c%></li>
+  <%end%>
+</ul>
+
+<%= link_to "Add a new Cohort", new_cohort_path%>

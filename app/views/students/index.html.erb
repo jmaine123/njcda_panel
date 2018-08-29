@@ -1,0 +1,6 @@
+<h1>List of all Students</h1>
+<% @students.each do |s|%>
+  <h3><%=link_to "#{s.full_name}", s%></h3>
+<%end%>
+
+<%= link_to 'Register a new Student', new_student_path%>

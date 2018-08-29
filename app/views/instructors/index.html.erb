@@ -1,0 +1,9 @@
+<h1>List of All instructors</h1>
+
+<% @instructors.each do |i|%>
+  <h3><%= link_to "#{i.full_name}", i %><br>
+<%end%>
+
+<br>
+
+<button type="button" name="button"><%=link_to 'Register New Instructor', new_instructor_path%><br></button>

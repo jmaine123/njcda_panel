@@ -1,0 +1,14 @@
+<h1><%=@cohort.name%></h1>
+<p><%=(@cohort.start_date).strftime('%a %B %e, %Y')%></p>
+<p><%=(@cohort.end_date).strftime('%a %B %e, %Y')%></p>
+
+<%=link_to 'Edit', edit_cohort_path%><br><br>
+<%= link_to 'Back to Index', cohorts_path%>
+
+<h2>List of Courses</h2>
+
+<%= link_to 'Add Course'%><br><br>
+
+<h2>List of Instructors</h2>
+<hr>
+<h2>List of Students</h2>

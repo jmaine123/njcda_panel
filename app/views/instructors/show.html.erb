@@ -1,0 +1,7 @@
+<h1><%=@instructor.full_name%></h1>
+<p><%=@instructor.age%></p>
+<p><%=@instructor.email%></p>
+<p><%=@instructor.created_at%></p>
+
+<p><%=link_to 'Edit', edit_instructor_path(@instructor)%></p>
+<%=link_to 'Back to Index', instructors_path%>

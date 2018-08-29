@@ -1,0 +1,15 @@
+<%= form_for(@student) do |f|%>
+
+  <%= f.text_field :first_name, placeholder: 'Enter First Name' %><br>
+  <%= f.text_field :last_name, placeholder: 'Enter Last Name' %><br>
+  <%= f.email_field :email, placeholder: 'Enter email' %><br>
+  <%= f.number_field :age, placeholder: 'Enter age' %><br><br>
+  <%= label_tag("Highest completed education") %><br>
+  <%= f.radio_button(:education, 'High School') %> High School<br>
+  <%= f.radio_button(:education, 'College')%> College<br>
+  <%= f.radio_button(:education, 'Masters') %> Masters<br>
+  <%= f.radio_button(:education, 'PHD')%>PHD<br>
+
+  <%= f.submit 'Register'%>
+
+<% end %>
