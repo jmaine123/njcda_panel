@@ -1,0 +1,8 @@
+<%= form_for(@course) do |f|%>
+
+<%= f.text_field :name, placeholder: 'Course name'%><br><br>
+<%= f.number_field :total_hours, placeholder: 'Total hours'%> /day<br><br>
+
+<%= f.submit 'Create'%>
+
+<%end%>

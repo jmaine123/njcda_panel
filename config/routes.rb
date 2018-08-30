@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :instructors
   resources :students
   resources :cohorts
+  resources :courses
 
   root 'pages#home'
   get 'instructors/new'

@@ -10,7 +10,7 @@ class CohortsController < ApplicationController
     if @cohort.save
       msg = "New cohort #{@cohort.name} has been created for #{@cohort.start_date} to #{@cohort.end_date}"
       flash[:success] = msg
-      redirect_to @student
+      redirect_to @cohort
     else
       render 'new'
     end
