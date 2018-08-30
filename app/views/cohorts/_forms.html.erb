@@ -1,4 +1,4 @@
-<%= form_for(@cohort) do |f|%>
+<%= form_for([@course, @cohort]) do |f|%>
 
 <%= f.text_field :name, placeholder: 'Cohorts name'%><br><br>
 <%= f.date_field :start_date, placeholder: 'Start Date'%><br><br>

@@ -19,6 +19,12 @@ class CoursesController < ApplicationController
   end
 
   def update
+    if @course.update(course_params)
+      flash[:success] = "#{@course.name} information has been updated in the database"
+      redirect_to @course
+    else
+      render 'edit'
+    end
   end
 
   def index

@@ -1,14 +1,12 @@
 <h1><%=@cohort.name%></h1>
-<p><%=(@cohort.start_date).strftime('%a %B %e, %Y')%></p>
-<p><%=(@cohort.end_date).strftime('%a %B %e, %Y')%></p>
+<p><strong>Start Date:</strong> <%=(@cohort.start_date).strftime('%a %B %e, %Y')%></p>
+<p><strong>End Date:</strong> <%=(@cohort.end_date).strftime('%a %B %e, %Y')%></p>
 
-<%=link_to 'Edit', edit_cohort_path%><br><br>
-<%= link_to 'Back to Index', cohorts_path%>
+<%=link_to 'Edit', edit_course_cohort_path%><br><br>
 
 <h2>List of Students enrolled in Course</h2>
 
-<%= link_to 'Enroll New Student', new_student_path%><br><br>
+
 
 <h2>Instructor</h2>
-
-<%= link_to 'Register New Instructor', new_instructor_path%>
+<%= link_to 'Back to Index', course_cohorts_path%>

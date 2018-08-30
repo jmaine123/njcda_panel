@@ -1,4 +1,4 @@
-<%= form_for(@instructor) do |f|%>
+<%= form_for([@course, @instructor]) do |f|%>
 
   <%= f.text_field :first_name, placeholder: 'Enter First Name' %><br>
   <%= f.text_field :last_name, placeholder: 'Enter Last Name' %><br>
