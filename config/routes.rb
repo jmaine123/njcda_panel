@@ -14,10 +14,16 @@ Rails.application.routes.draw do
   get 'students/edit'
   get 'students/show'
 
-  resources :instructors
-  resources :students
-  resources :cohorts
-  resources :courses
+  # resources :instructors
+  # resources :students
+  # resources :cohorts
+  # resources :courses
+
+  resources :courses do
+    resources :students
+    resources :cohorts
+    resources :courses
+  end
 
   root 'pages#home'
   get 'instructors/new'
