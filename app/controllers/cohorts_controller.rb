@@ -1,13 +1,13 @@
 class CohortsController < ApplicationController
   before_action :find_cohort, only: [:show, :edit, :update, :destroy]
+  before_action :find_course
+  before_action :find_instructor
+
   def new
     @cohort = Cohort.new
-    @course = Course.find(params[:course_id])
   end
 
   def create
-    @cohort = Cohort.new(cohort_params)
-    @course = Course.find(params[:course_id])
     @cohort.course_id = @course.id
 
     if @cohort.save
@@ -20,11 +20,11 @@ class CohortsController < ApplicationController
   end
 
   def edit
-    @course = Course.find(params[:course_id])
+
   end
 
   def update
-    @course = Course.find(params[:course_id])
+
     if @cohort.update(cohort_params)
       flash[:success] = "#{@cohort.name} records has been updated in the database"
       redirect_to course_cohort_path(@cohort.course.id, @cohort)
@@ -34,16 +34,24 @@ class CohortsController < ApplicationController
   end
 
   def show
+
   end
 
   def index
-    @course = Course.find(params[:course_id])
     @cohorts = Cohort.all
   end
   private
 
   def find_cohort
     @cohort = Cohort.find(params[:id])
+  end
+
+  def find_course
+    @course = Course.find(params[:course_id])
+  end
+
+  def find_instructor
+    @instructor = Instructor.where(cohort_id:@cohort.id).first
   end
 
   def cohort_params

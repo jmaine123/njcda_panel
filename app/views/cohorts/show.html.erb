@@ -1,12 +1,26 @@
-<h1><%=@cohort.name%></h1>
+<h1><%=@cohort.name%> for <%= @course.name%> Course</h1>
 <p><strong>Start Date:</strong> <%=(@cohort.start_date).strftime('%a %B %e, %Y')%></p>
 <p><strong>End Date:</strong> <%=(@cohort.end_date).strftime('%a %B %e, %Y')%></p>
 
 <%=link_to 'Edit', edit_course_cohort_path%><br><br>
 
-<h2>List of Students enrolled in Course</h2>
+<div class="student_teacher">
+  <div>
+    <h2>List of Students enrolled in Course</h2>
+  </div>
+
+  <div>
+    <h2>Instructor</h2>
+    <ul>
+      <li><%=link_to "#{@cohort.instructor.full_name}", course_cohort_instructor_path(@course.id, @cohort.id, @instructor) if @cohort.instructor %></li>
+    </ul>
+    
+    <% if @cohort.instructor == nil %>
+    <%=link_to 'Add a Instructor to Cohort', new_course_cohort_instructor_path(@course.id, @cohort.id)%>
+    <%end%>
+  </div>
+</div>
 
 
 
-<h2>Instructor</h2>
 <%= link_to 'Back to Index', course_cohorts_path%>

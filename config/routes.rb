@@ -20,9 +20,10 @@ Rails.application.routes.draw do
   # resources :courses
 
   resources :courses do
-    resources :students
-    resources :cohorts
-    resources :courses
+    resources :cohorts do
+      resources :instructors
+      resources :students
+    end
   end
 
   root 'pages#home'

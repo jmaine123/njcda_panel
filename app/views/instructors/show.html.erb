@@ -1,7 +1,7 @@
 <h1><%=@instructor.full_name%></h1>
-<p><%=@instructor.age%></p>
-<p><%=@instructor.email%></p>
-<p><%=@instructor.created_at%></p>
+<p>Age: <%=@instructor.age%></p>
+<p>Email: <%=@instructor.email%></p>
+<p>Yearly salary: <%= @instructor.salary%></p>
+<p>Registered on: <%=(@instructor.created_at).strftime('%a %B %e, %Y')%></p>
 
-<p><%=link_to 'Edit', edit_instructor_path(@instructor)%></p>
-<%=link_to 'Back to Index', instructors_path%>
+<%=link_to 'Edit', edit_course_cohort_instructor_path(@course.id, @cohort.id, @instructor)%>

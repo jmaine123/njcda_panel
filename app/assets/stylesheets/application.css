@@ -41,3 +41,21 @@
    text-decoration: none;
    font-size: 1.5em;
  }
+
+.student_teacher{
+  font-family: sans-serif;
+  height:40vh;
+  width:90%;
+  margin:0 auto;
+  display: grid;
+  grid-template: 100%/ repeat(2, 1fr);
+  grid-gap: 5%;
+}
+
+.student_teacher div li{
+  padding: 2%;
+}
+
+.student_teacher div{
+  border: 1px solid black;
+}

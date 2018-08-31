@@ -1,5 +1,6 @@
 class InstructorsController < ApplicationController
 before_action :find_instructor, only: [:show, :edit, :update, :destroy]
+before_action :find_course_cohort
 
   def new
     @instructor = Instructor.new
@@ -7,9 +8,11 @@ before_action :find_instructor, only: [:show, :edit, :update, :destroy]
 
   def create
     @instructor = Instructor.new(instructor_params)
-    if @instructor.save!
+    @instructor.cohort_id = @cohort.id
+    @instructor.course_id = @course.id
+    if @instructor.save
       flash[:notice] = "Instructor successfully registered"
-      redirect_to @instructor
+      redirect_to course_cohort_instructor_path(@course.id,@instructor.cohort_id, @instructor)
     else
       render 'new'
     end
@@ -20,12 +23,11 @@ before_action :find_instructor, only: [:show, :edit, :update, :destroy]
   end
 
   def edit
-    @instructor = Instructor.find(params[:id])
   end
 
   def update
     if @instructor.update(instructor_params)
-      redirect_to @instructor, notice: 'Instructor information has been successfully updated'
+      redirect_to course_cohort_instructor_path(@course.id,@cohort.course_id, @instructor), notice: 'Instructor information has been successfully updated'
     else
       render 'edit'
     end
@@ -48,5 +50,11 @@ before_action :find_instructor, only: [:show, :edit, :update, :destroy]
 
   def find_instructor
   @instructor = Instructor.find(params[:id])
-end
+  end
+
+  def find_course_cohort
+    @cohort = Cohort.find(params[:cohort_id])
+    @course = Course.find(params[:course_id])
+  end
+
 end
