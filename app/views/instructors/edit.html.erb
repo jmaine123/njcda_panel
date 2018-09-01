@@ -3,4 +3,6 @@
 <%= render 'forms'%>
 
 <br>
-<%=link_to 'Terminate', course_cohort_instructor_path(@course.id, @cohort.id, @instructor.id), method: :delete, data: { confirm: "Are you sure you want to terminate #{@instructor.full_name} ?"}%>
+<%=link_to 'Terminate', course_cohort_instructor_path(@course.id, @cohort.id, @instructor.id), method: :delete, data: { confirm: "Are you sure you want to terminate #{@instructor.full_name} ?"}%><br>
+
+<%= link_to 'Back to Cohort', course_cohort_path(@course.id, @cohort.id)%>

@@ -1,3 +1,5 @@
 <h1>Edit Cohort</h1>
 
 <%=render 'forms'%>
+<br>
+<%= link_to "Return to #{@cohort.name}", course_cohort_path(@course.id, @cohort.id)%>

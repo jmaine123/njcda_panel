@@ -4,4 +4,6 @@
 <p>Yearly salary: <%= @instructor.salary%></p>
 <p>Registered on: <%=(@instructor.created_at).strftime('%a %B %e, %Y')%></p>
 
-<%=link_to 'Edit', edit_course_cohort_instructor_path(@course.id, @cohort.id, @instructor)%>
+<%=link_to 'Edit', edit_course_cohort_instructor_path(@course.id, @cohort.id, @instructor)%><br>
+
+<%= link_to 'Back to Cohort', course_cohort_path(@course.id, @cohort.id)%>
