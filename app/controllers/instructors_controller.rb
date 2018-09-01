@@ -27,7 +27,7 @@ before_action :find_course_cohort
 
   def update
     if @instructor.update(instructor_params)
-      redirect_to course_cohort_instructor_path(@course.id,@cohort.course_id, @instructor), notice: 'Instructor information has been successfully updated'
+      redirect_to course_cohort_instructor_path(@course.id,@instructor.cohort_id, @instructor), notice: 'Instructor information has been successfully updated'
     else
       render 'edit'
     end
@@ -36,7 +36,7 @@ before_action :find_course_cohort
   def destroy
     @instructor.destroy
     flash[:success] = "Instructor has been deleted from the database!"
-    redirect_to instructors_path
+    redirect_to course_cohort_path(@course.id, @cohort.id)
   end
 
   def show

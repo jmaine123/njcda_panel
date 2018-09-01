@@ -44,11 +44,11 @@
 
 .student_teacher{
   font-family: sans-serif;
-  height:40vh;
+  height:60vh;
   width:90%;
   margin:0 auto;
   display: grid;
-  grid-template: 100%/ repeat(2, 1fr);
+  grid-template: 10% 70% 20%/ repeat(2, 1fr);
   grid-gap: 5%;
 }
 
@@ -58,4 +58,5 @@
 
 .student_teacher div{
   border: 1px solid black;
+  overflow: auto;
 }

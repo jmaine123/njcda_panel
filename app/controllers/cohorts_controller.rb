@@ -8,6 +8,7 @@ class CohortsController < ApplicationController
   end
 
   def create
+    @cohort = Cohort.new(cohort_params)
     @cohort.course_id = @course.id
 
     if @cohort.save
@@ -37,6 +38,12 @@ class CohortsController < ApplicationController
 
   end
 
+  def destroy
+    @cohort.destroy
+    flash[:success] = "Instructor has been deleted from the database!"
+    redirect_to instructors_path
+  end
+
   def index
     @cohorts = Cohort.all
   end
@@ -51,8 +58,9 @@ class CohortsController < ApplicationController
   end
 
   def find_instructor
-    @instructor = Instructor.where(cohort_id:@cohort.id).first
+    @instructor = Instructor.find_by(cohort_id:@cohort.id)
   end
+
 
   def cohort_params
     params.require(:cohort).permit(:name, :start_date, :end_date)

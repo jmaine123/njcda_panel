@@ -1,15 +1,18 @@
 class StudentsController < ApplicationController
   before_action :find_student, only: [:show, :edit, :update, :destroy]
+  before_action :find_course_cohort
   def new
     @student = Student.new
   end
 
   def create
     @student = Student.new(student_params)
+    @student.cohort_id = @cohort.id
+    @student.course_id = @course.id
     if @student.save
       msg = "New Student #{@student.first_name} registered"
+      redirect_to course_cohort_path(@course.id,@student.cohort_id, @student)
       flash[:success] = msg
-      redirect_to @student
     else
       render 'new'
     end
@@ -25,8 +28,8 @@ class StudentsController < ApplicationController
 
   def update
     if @student.update(student_params)
-          flash[:success] = "#{@student.full_name} records has been updated in the database"
-      redirect_to @student
+      flash[:notice] = "#{@student.full_name} records has been updated in the database"
+      redirect_to course_cohort_student_path(@course.id,@student.cohort_id, @student.id), notice: 'Instructor information has been successfully updated'
     else
       render 'edit'
     end
@@ -35,7 +38,7 @@ class StudentsController < ApplicationController
   def destroy
     @student.destroy
     flash[:success] = "A Instructor has been deleted from the database!"
-    redirect_to students_path
+    redirect_to course_cohort_path(@course.id, @cohort.id)
   end
 
   def show
@@ -49,5 +52,10 @@ class StudentsController < ApplicationController
 
   def find_student
     @student = Student.find(params[:id])
+  end
+
+  def find_course_cohort
+    @cohort = Cohort.find(params[:cohort_id])
+    @course = Course.find(params[:course_id])
   end
 end
