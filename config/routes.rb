@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  get 'session/new'
   get 'users/new'
   get 'users/edit'
   get 'users/index'
   get 'users/show'
-  
+
   get 'courses/new'
   get 'courses/edit'
   get 'courses/index'
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
   # resources :students
   # resources :cohorts
   # resources :courses
+  resources :users
 
   resources :courses do
     resources :cohorts do

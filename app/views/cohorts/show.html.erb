@@ -35,4 +35,4 @@
 
 
 
-<%= link_to 'Back to Index', course_cohorts_path%>
+<%= link_to "Back to #{@course.name}", course_path(@course.id)%>

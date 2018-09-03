@@ -1,13 +1,13 @@
 <h1>Sign Up for Panel</h1>
 
-<%= form_for(users_new_path) do |f| %>
+<%= form_for(@user) do |f| %>
 <%= f.text_field :first_name, placeholder: 'Enter your first name' %><br><br>
 <%= f.text_field :last_name, placeholder: 'Enter your last name' %><br><br>
-<%=f.number_field :age, placeholder: 'Enter your age'%><br><br>
+<%= f.number_field :age, placeholder: 'Enter your age'%><br><br>
 <%= f.email_field :email, placeholder: 'Enter your email' ,required: true %><br><br>
 
-<%=f.password_field :password, placeholder: 'Create a password'%><br><br>
-<%= f.password_field :password_confirmation, placeholder: 'Confirm Password', required: true %><br><br>
+<%= f.password_field :password_digest, placeholder: 'Create a password', required: true %><br><br>
+
 
 <%=f.text_field :auth_code, placeholder: 'Authorization Code'%><br><br>
 
