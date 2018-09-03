@@ -14,20 +14,72 @@
  *= require_self
  */
 
+html{
+  background-image:url('https://images.unsplash.com/photo-1519452575417-564c1401ecc0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c13e16dc570c2c74875bf2303e779e14&auto=format&fit=crop&w=1500&q=80');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+/* .nav li{
+  display: inline-block;
+  margin-right: 5%
+} */
+
+body{
+  margin:0;
+}
+.nav{
+  grid-area: nav;
+  display: grid;
+  background-color: #becde5;
+  margin:0;
+  height: 100%;
+  opacity: .7;
+  list-style: none;
+}
+
+.nav li{
+  margin: auto 0;
+  border: 1px solid #568bdf;
+}
+
+.main-container{
+  grid-area: main;
+  display: grid;
+  grid-template:
+}
+
  :root{
    --dashboard:rgb(38, 224, 79);
    --dark: rgb(31, 113, 72);
  }
 
+ .header{
+   grid-area: header;
+   background-color: #1669ad;
+ }
+
  #dashboard{
    font-family: sans-serif;
    text-align: center;
+ }
 
+ .container{
+   display: grid;
+   height: 100vh;
+   grid-template: repeat(6,1fr)/repeat(6, 1fr);
+   grid-template-areas:
+   "nav header header header header header"
+   "nav main main main main main"
+   "nav main main main main main"
+   "nav main main main main main"
+   "nav main main main main main"
+   "nav main main main main main";
  }
 
  #dashboard a{
    text-decoration: none;
-   color: rgb(38, 224, 79);
+   color: white;
    font-size: 2em;
  }
 
