@@ -28,13 +28,17 @@ html{
 body{
   margin:0;
 }
+
+h1, h2{
+  color: white;
+}
 .nav{
   grid-area: nav;
   display: grid;
   background-color: #5372a4;
   margin:0;
   height: 100%;
-  opacity: .7;
+  /* opacity: .9; */
   list-style: none;
   border: 1px solid black;
 }
@@ -46,20 +50,22 @@ background-color: #becde5;
 .nav div{
   width:100%;
   height:100%;
+  box-shadow: 1px 1px 1px;
 }
 
 .nav div a{
   text-decoration: none;
   font-size: 1.5em;
   color: white;
-  margin: auto;
+  margin: 60% 10%;
 }
 
 
 .main-container{
   grid-area: main;
   display: grid;
-  grid-template:
+  background-color:rgba(98, 151, 231, 0.7);
+
 }
 
  :root{
@@ -100,12 +106,13 @@ background-color: #becde5;
  button{
    background-color:var(--dashboard);
    border: 1px solid blue;
+   border-radius: 10%;
  }
 
  button a{
    color: var(--dark);
    text-decoration: none;
-   font-size: 2.5em;
+   font-size: 2.7em;
  }
 
 .student_teacher{
@@ -125,4 +132,10 @@ background-color: #becde5;
 .student_teacher div{
   border: 1px solid black;
   overflow: auto;
+}
+
+.login{
+  margin: auto;
+  border: 1px solid black;
+  height: 50%;
 }

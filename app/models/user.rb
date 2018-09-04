@@ -8,11 +8,12 @@ class User < ApplicationRecord
 
   def type_of_user
     admin =  '1234'
-    teacher = 'abcd'
+    instructor = 'abcd'
     if self.auth_code === admin
       self.admin = true
-    else
+    elsif self.auth_code === instructor
       self.admin = false
+      self.instructor = true
     end
   end
 end
