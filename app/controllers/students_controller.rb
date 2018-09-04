@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_action :find_student, only: [:show, :edit, :update, :destroy]
-  before_action :find_course_cohort
+  before_action :find_course_cohort, except: [:index]
   def new
     @student = Student.new
   end

@@ -1,10 +1,11 @@
 <h1>All Courses</h1>
 
-<ul>
+<div class = 'course_list'>
+  <%color = ['red','blue','yellow']%>
   <% @courses.each do |c|%>
-    <li><%=link_to c.name, c%></li>
+    <div><%=link_to c.name, c%></div>
   <%end%>
-</ul>
+</div>
 <% if logged_in? && current_user.admin === true %>
 <%= link_to 'Add Course', new_course_path%><br><br>
 <%end%>

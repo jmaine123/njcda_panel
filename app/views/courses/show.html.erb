@@ -15,3 +15,5 @@
 <% if logged_in? && current_user.admin === true %>
 <%= link_to "Add a new Cohort", new_course_cohort_path(@course.id)%>
 <%end%>
+<br><br>
+<%= link_to 'Back to Cohort', courses_path%>

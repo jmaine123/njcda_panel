@@ -1,6 +1,6 @@
 class InstructorsController < ApplicationController
 before_action :find_instructor, only: [:show, :edit, :update, :destroy]
-before_action :find_course_cohort
+before_action :find_course_cohort, except: [:index]
 
   def new
     @instructor = Instructor.new
