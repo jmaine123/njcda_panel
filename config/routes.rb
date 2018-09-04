@@ -20,10 +20,6 @@ Rails.application.routes.draw do
   get 'students/edit'
   get 'students/show'
 
-  # resources :instructors
-  # resources :students
-  # resources :cohorts
-  # resources :courses
   resources :users
 
   resources :courses do
@@ -32,6 +28,10 @@ Rails.application.routes.draw do
       resources :students
     end
   end
+
+get '/login' => 'sessions#new'
+post '/login' => 'sessions#create'
+delete '/logout' => 'sessions#destroy'
 
   root 'pages#home'
   get 'instructors/new'
