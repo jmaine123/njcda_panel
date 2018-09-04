@@ -1,5 +1,6 @@
-<h1>Sign Up for Panel</h1>
 
+<h1>Sign Up for Panel</h1>
+<div>
 <%= form_for(@user) do |f| %>
 <%= f.text_field :first_name, placeholder: 'Enter your first name' %><br><br>
 <%= f.text_field :last_name, placeholder: 'Enter your last name' %><br><br>
@@ -14,3 +15,4 @@
 <%= f.submit 'Register'%>
 
 <%end%>
+</div>

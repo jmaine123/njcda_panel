@@ -28,7 +28,7 @@ class StudentsController < ApplicationController
 
   def update
     if @student.update(student_params)
-      flash[:notice] = "#{@student.full_name} records has been updated in the database"
+      flash[:success] = "#{@student.full_name} records has been updated in the database"
       redirect_to course_cohort_student_path(@course.id,@student.cohort_id, @student.id), notice: 'Instructor information has been successfully updated'
     else
       render 'edit'

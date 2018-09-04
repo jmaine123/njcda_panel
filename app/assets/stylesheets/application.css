@@ -63,14 +63,15 @@ background-color: #becde5;
 
 .main-container{
   grid-area: main;
-  display: grid;
   background-color:rgba(98, 151, 231, 0.7);
+  height:100%;
 
 }
 
  :root{
    --dashboard:#1669ad;
    --dark: white;
+   --second: #9198e5;
  }
 
  .header{
@@ -86,7 +87,6 @@ background-color: #becde5;
 
  .container{
    display: grid;
-   height: 100vh;
    grid-template: repeat(6,1fr)/repeat(6, 1fr);
    grid-template-areas:
    "nav header header header header header"
@@ -105,7 +105,6 @@ background-color: #becde5;
 
  button{
    background-color:var(--dashboard);
-   border: 1px solid blue;
    border-radius: 10%;
  }
 
@@ -115,10 +114,15 @@ background-color: #becde5;
    font-size: 2.7em;
  }
 
+ button:hover{
+   background-color: var(--second);
+   color:var(--dashboard);
+ }
+
 .student_teacher{
   font-family: sans-serif;
   height:60vh;
-  width:90%;
+  width:100%;
   margin:0 auto;
   display: grid;
   grid-template: 10% 70% 20%/ repeat(2, 1fr);
@@ -138,4 +142,9 @@ background-color: #becde5;
   margin: auto;
   border: 1px solid black;
   height: 50%;
+}
+
+.start{
+  text-align: center;
+  margin-top: 20%;
 }

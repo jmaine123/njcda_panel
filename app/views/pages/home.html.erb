@@ -1,10 +1,11 @@
 <% if current_user != nil%>
 <h1>Welcome, <%=current_user.email%></h1>
 <%else%>
-<h1></h1>
+
 <%end%>
-<ul>
-  <center>
-  <button type="button" name="button"><%=link_to 'Enter Dashboard', courses_path%></button>
-</center>
-</ul>
+<div class = 'start'>
+
+<% if logged_in?%>
+<button type="button" name="button"><%=link_to 'Enter Dashboard', courses_path%></button>
+<%end%>
+</div>
