@@ -1,7 +1,10 @@
-<h1><%=@student.full_name%></h1>
-<p><%=@student.age%></p>
-<p><%=@student.email%></p>
-<p><%=@student.created_at.strftime('%a %B %e, %Y  %l:%M%P')%></p>
+<h1>Full Name: <%=@student.full_name%></h1>
+<p>Age: <%=@student.age%></p>
+<p>Email: <%=@student.email%></p>
+<p><%=@course.name%></p>
+<p>Registered date: <%=@student.created_at.strftime('%a %B %e, %Y  %l:%M%P')%></p>
 
+<% if current_user.admin === true %>
 <p><%=link_to 'Edit', edit_course_cohort_student_path(@course.id,@cohort.id, @student)%></p>
+<%end%>
 <%=link_to 'Back to Cohort', course_cohort_path(@course.id, @cohort.id)%>
