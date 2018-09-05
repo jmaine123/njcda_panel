@@ -25,6 +25,8 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
+  
+  private
 
   def user_params
     params.require(:user).permit(:first_name, :email, :age, :auth_code, :last_name, :password_digest)

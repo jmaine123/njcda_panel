@@ -1,5 +1,5 @@
 <h1><%=@course.name%></h1>
-<p><%= @course.total_hours%> hours per day</p>
+<p><%= @course.total_hours%> hours per week</p>
 
 <% if logged_in? && current_user.admin === true %>
 <%= link_to 'Edit Course Information', edit_course_path%>

@@ -8,12 +8,13 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
   </head>
 
   <body>
     <div class="container">
       <div class="header">
-        <h1 id='dashboard'><%= link_to 'Dashboard', courses_path%></h1>
+        <h1 id='dashboard'><%= link_to 'Dashboard'%></h1>
       </div>
 
       <%= render 'layouts/header'%>

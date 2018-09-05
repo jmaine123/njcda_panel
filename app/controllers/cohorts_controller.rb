@@ -1,7 +1,7 @@
 class CohortsController < ApplicationController
   before_action :find_cohort, only: [:show, :edit, :update, :destroy]
   before_action :find_course
-  before_action :find_instructor
+  before_action :find_instructor, except: [:new]
 
   def new
     @cohort = Cohort.new
