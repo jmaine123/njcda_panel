@@ -35,6 +35,9 @@ class CoursesController < ApplicationController
   end
 
   def destroy
+    @course.destroy
+    flash[:success] = "Instructor has been deleted from the database!"
+    redirect_to courses_path
   end
 
   private

@@ -7,9 +7,9 @@
 <%end%>
 
 <div class="student_teacher">
-  <h2>List of Students enrolled in Course</h2>
+  <h2>List of Students enrolled in Cohort</h2>
   <h2>Instructor</h2>
-  <div>
+  <div class = 'cohort_students'>
 
     <ul>
       <% @cohort.students.each do |student|%>
@@ -19,7 +19,7 @@
 
   </div>
 
-  <div>
+  <div class = 'cohort_instructor'>
 
     <ul>
       <%if @instructor != nil %>
@@ -27,14 +27,13 @@
       <%end%>
     </ul>
 
-    <% if @cohort.instructor == nil %>
-
-    <%end%>
-
   </div>
   <% if logged_in? && current_user.admin === true %>
   <%=link_to 'Register Student to Cohort', new_course_cohort_student_path(@course.id, @cohort.id)%>
+  <% if @cohort.instructor === nil %>
   <%=link_to 'Add a Instructor to Cohort', new_course_cohort_instructor_path(@course.id, @cohort.id)%>
+  <%end%>
+
   <%end%>
 </div>
 
