@@ -101,7 +101,7 @@ background-color: #becde5;
  .container{
    display: grid;
    height:100%;
-   grid-template: repeat(6,1fr)/repeat(6, 1fr);
+   grid-template: repeat(7,1fr)/repeat(6, 1fr);
    grid-template-areas:
    "nav header header header header header"
    "nav main main main main main"
