@@ -1,9 +1,10 @@
-<%= form_for([@course, @cohort]) do |f|%>
 
-<%= f.text_field :name, placeholder: 'Cohorts name'%><br><br>
-<%= f.date_field :start_date, placeholder: 'Start Date'%><br><br>
-<%= f.date_field :end_date, placeholder: 'End Date'%><br><br>
+  <%= form_for([@course, @cohort]) do |f|%>
 
-<%= f.submit 'Create'%>
+  <%= f.text_field :name, placeholder: 'Cohorts name'%><br><br>
+  <%= f.date_field :start_date, placeholder: 'Start Date'%><br><br>
+  <%= f.date_field :end_date, placeholder: 'End Date'%><br><br>
 
-<%end%>
+  <%= f.submit 'Create'%>
+
+  <%end%>

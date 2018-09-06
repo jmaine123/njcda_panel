@@ -1,9 +1,14 @@
+
 <div class="login">
-  <h1>Log in</h1>
-  <h2>Don't have a Account? <%= link_to 'Create Account'%></h2>
+  <% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+  
+  <h2>Log in</h2>
+  <h3>Don't have a Account? <%= link_to 'Create Account'%></h3>
 
   <%= form_for(:session, url: login_path) do |f|%>
-  <%=f.email_field :email, placeholder: 'Email', required: true %> <br>
+  <%=f.email_field :email, placeholder: 'Email', required: true %> <br><br>
   <%= f.password_field :password, placeholder: "Password", required: true %> <br>
 
   <%= f.submit 'Log in'%>

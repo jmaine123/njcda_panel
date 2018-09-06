@@ -3,6 +3,9 @@
 <%else%>
 
 <%end%>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 <div class = 'start'>
 
 <% if logged_in?%>

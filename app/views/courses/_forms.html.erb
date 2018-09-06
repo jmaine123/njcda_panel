@@ -1,8 +1,9 @@
-<%= form_for(@course) do |f|%>
 
-<%= f.text_field :name, placeholder: 'Course name'%><br><br>
-<%= f.number_field :total_hours, placeholder: 'Total hours'%> per week<br><br>
+  <%= form_for(@course) do |f|%>
 
-<%= f.submit 'Create'%>
+  <%= f.text_field :name, placeholder: 'Course name'%><br><br>
+  <%= f.number_field :total_hours, placeholder: 'Total hours'%> per week<br><br>
 
-<%end%>
+  <%= f.submit 'Create'%>
+
+  <%end%>

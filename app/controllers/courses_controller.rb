@@ -1,5 +1,7 @@
 class CoursesController < ApplicationController
   before_action :find_course, only: [:show, :edit, :update, :destroy]
+  before_action :admin_only, except: [:show, :index]
+  before_action :require_login
 
   def new
     @course = Course.new
@@ -48,5 +50,19 @@ class CoursesController < ApplicationController
 
   def course_params
     params.require(:course).permit(:name, :total_hours)
+  end
+
+  def admin_only
+    if current_user.admin === false || current_user.admin === nil
+      flash[:notice] = "Access Denied. You were not authorized to view that page"
+      redirect_to root_path alert: 'Access Denied'
+    end
+  end
+
+  def require_login
+    if current_user === nil
+      flash[:notice] = "You are not logged in and/or signed up yet. Please Try again"
+      redirect_to login_path
+    end
   end
 end

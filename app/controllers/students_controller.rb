@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
   before_action :find_student, only: [:show, :edit, :update, :destroy]
   before_action :find_course_cohort, except: [:index]
+  before_action :admin_only, except: [:index, :show]
   def new
     @student = Student.new
   end
@@ -57,5 +58,11 @@ class StudentsController < ApplicationController
   def find_course_cohort
     @cohort = Cohort.find(params[:cohort_id])
     @course = Course.find(params[:course_id])
+  end
+
+  def admin_only
+    if current_user.admin === false || current_user.admin === nil
+      redirect_to root_path alert: 'Access Denied'
+    end
   end
 end

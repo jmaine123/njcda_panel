@@ -1,7 +1,9 @@
 class CohortsController < ApplicationController
   before_action :find_cohort, only: [:show, :edit, :update, :destroy]
   before_action :find_course
-  before_action :find_instructor, except: [:new]
+  before_action :find_instructor, except: [:new, :create]
+  before_action :admin_only, except:[:index, :show]
+  before_action :require_login
 
   def new
     @cohort = Cohort.new
@@ -47,6 +49,7 @@ class CohortsController < ApplicationController
   def index
     @cohorts = Cohort.all
   end
+
   private
 
   def find_cohort
@@ -61,8 +64,21 @@ class CohortsController < ApplicationController
     @instructor = Instructor.find_by(cohort_id:@cohort.id)
   end
 
-
   def cohort_params
     params.require(:cohort).permit(:name, :start_date, :end_date)
+  end
+
+  def admin_only
+    if current_user.admin === false || current_user.admin === nil
+      flash[:notice] = "Access Denied. You were not authorized to view that page"
+      redirect_to root_path alert: 'Access Denied'
+    end
+  end
+
+  def require_login
+    if current_user === nil
+      flash[:notice] = "You are not logged in and/or signed up yet. Please Try again"
+      redirect_to login_path
+    end
   end
 end

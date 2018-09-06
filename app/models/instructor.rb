@@ -1,6 +1,7 @@
 class Instructor < ApplicationRecord
   validates :email, uniqueness: true
   validates :age, numericality: { less_than: 150, greater_than: 18 }
+  validates :salary, numericality:{greater_than: 0}
   belongs_to :cohort
 
   def full_name
