@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       if @user.save
         msg = "Thanks for signing up, #{@user.email}"
         flash[:success] = msg
-        redirect_to 'register'
+        redirect_to users_path
       else
         render 'new'
       end
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :email, :age, :auth_code, :last_name, :password_digest)
+    params.require(:user).permit(:first_name, :email, :age, :auth_code, :last_name, :password, :password_confirmation)
   end
 
   def valid_user?
