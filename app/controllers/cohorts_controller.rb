@@ -41,6 +41,8 @@ class CohortsController < ApplicationController
   end
 
   def destroy
+    @cohort.students.destroy
+    @cohort.instructor.destroy
     @cohort.destroy
     flash[:success] = "Cohort has been deleted from the database!"
     redirect_to course_path(@course.id)

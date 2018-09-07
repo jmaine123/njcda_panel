@@ -1,18 +1,19 @@
 
 <div class='signup-form'>
-<h1>Sign Up for Panel</h1>
+<h2>Create your Account</h2>
+<h3>Already have a Account? <%= link_to "Log In", login_path%></h3>
 <%= form_for(@user) do |f| %>
-<%= f.text_field :first_name, placeholder: 'Enter your first name' %>
-<%= f.text_field :last_name, placeholder: 'Enter your last name' %><br><br>
-<%= f.email_field :email, placeholder: 'Enter your email' ,required: true %><br><br>
-<%= f.number_field :age, placeholder: 'Enter your age'%><br><br>
+<%= f.text_field :first_name, placeholder: 'Enter your first name', class: 'name', required: true %>
+<%= f.text_field :last_name, placeholder: 'Enter your last name', class:'name', required: true%><br><br>
+<%= f.email_field :email, placeholder: 'Enter your email' ,class: 'email', required: true %>
+<%= f.number_field :age, placeholder: 'age',class: 'age'%><br><br>
 
-<%= f.password_field :password, placeholder: 'Create a password', required: true %><br><br>
-<%= f.password_field :password_confirmation, placeholder: 'Confirm your password', required: true %><br><br>
+<%= f.password_field :password, placeholder: 'Create a password', class: 'password', required: true %><br><br>
+<%= f.password_field :password_confirmation, placeholder: 'Confirm your password', class: 'password', required: true %><br><br>
 
 <%=f.text_field :auth_code, placeholder: 'Authorization Code'%><br><br>
 
-<%= f.submit 'Register'%>
+<%= f.submit 'Register', class:'submit-btns'%>
 
 <%end%>
 </div>

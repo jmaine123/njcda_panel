@@ -3,15 +3,15 @@
   <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
   <% end %>
-  
+
   <h2>Log in</h2>
-  <h3>Don't have a Account? <%= link_to 'Create Account'%></h3>
+  <h3>Don't have a Account? <%= link_to 'Create Account', new_user_path%></h3>
 
   <%= form_for(:session, url: login_path) do |f|%>
   <%=f.email_field :email, placeholder: 'Email', required: true %> <br><br>
   <%= f.password_field :password, placeholder: "Password", required: true %> <br>
 
-  <%= f.submit 'Log in'%>
+  <%= f.submit 'Log in', class:'submit-btns'%>
 
   <%end%>
 
