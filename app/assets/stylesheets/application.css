@@ -175,6 +175,17 @@ background-color: #becde5;
   background-color: rgba(98, 151, 231, .4);
 }
 
+.users-grid{
+  width: 60%;
+  margin: 0 auto;
+}
+
+.users-grid li{
+  display: grid;
+  grid-template: 100%/50% 50%;
+  border:1px solid black;
+}
+
 
 .start{
   text-align: center;
@@ -224,7 +235,7 @@ font-size: 1.2em;
 
 .forms{
   width: 50%;
-  height: 40%;
+  height: auto;
   border: 1px solid #1669ad;
   border-radius: 10%;
   padding: 5%;
@@ -252,6 +263,8 @@ font-size: 1.2em;
 input{
   border-radius: 5%;
   font-size: 15px;
+  margin-top: 2%;
+  margin-right: 2%;
 }
 
 .input{

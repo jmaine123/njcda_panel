@@ -1,6 +1,7 @@
 <h1>Pamela Panel User's</h1>
-<ul>
+<ul class = 'users-grid'>
+  <li><h2>Student</h2><h2>Admin</h2></li>
   <%@users.each do |u|%>
-  <li><%=link_to "#{u.full_name}", u%></li>
+  <li><%=link_to "#{u.full_name}", u %><%=u.admin%></li>
   <%end%>
 </ul>
