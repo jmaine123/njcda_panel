@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2018_09_02_185200) do
     t.string "name"
     t.datetime "start_date"
     t.datetime "end_date"
+    t.integer "max_students"
+    t.integer "days_per_week"
     t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -24,6 +26,9 @@ ActiveRecord::Schema.define(version: 2018_09_02_185200) do
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.integer "total_hours"
+    t.text "description"
+    t.integer "tuition"
+    t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,6 +40,8 @@ ActiveRecord::Schema.define(version: 2018_09_02_185200) do
     t.integer "salary"
     t.string "education"
     t.text "email"
+    t.string "employee_id"
+    t.string "phone_number"
     t.integer "cohort_id"
     t.integer "course_id"
     t.datetime "created_at", null: false
@@ -47,6 +54,8 @@ ActiveRecord::Schema.define(version: 2018_09_02_185200) do
     t.integer "age"
     t.string "email"
     t.string "education"
+    t.string "student_id"
+    t.string "phone_number"
     t.integer "cohort_id"
     t.integer "course_id"
     t.datetime "created_at", null: false

@@ -8,4 +8,8 @@ class Student < ApplicationRecord
   def full_name
     self.first_name + " " + self.last_name
   end
+
+  def generate_student_id
+    self.student_id = SecureRandom.uuid
+  end
 end
