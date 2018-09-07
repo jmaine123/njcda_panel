@@ -2,6 +2,6 @@
 
 <%= render 'forms'%>
 
-<%=link_to 'Terminate', course_path(@course.id), method: :delete, data: { confirm: "Are you sure you want to terminate #{@course.name} ?"}%><br>
+<%=link_to 'Delete Course', course_path(@course.id), method: :delete, data: { confirm: "Are you sure you want to delete #{@course.name} ?"}%><br>
 
 <%= link_to 'Back to Cohort', courses_path%>

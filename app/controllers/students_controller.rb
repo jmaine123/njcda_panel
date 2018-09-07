@@ -2,6 +2,7 @@ class StudentsController < ApplicationController
   before_action :find_student, only: [:show, :edit, :update, :destroy]
   before_action :find_course_cohort, except: [:index]
   before_action :admin_only, except: [:index, :show]
+  before_action :require_login
   def new
     @student = Student.new
   end
@@ -38,7 +39,7 @@ class StudentsController < ApplicationController
 
   def destroy
     @student.destroy
-    flash[:success] = "A Instructor has been deleted from the database!"
+    flash[:success] = "A student has been deleted from the #{@cohort.name}!"
     redirect_to course_cohort_path(@course.id, @cohort.id)
   end
 
@@ -62,7 +63,15 @@ class StudentsController < ApplicationController
 
   def admin_only
     if current_user.admin === false || current_user.admin === nil
+      flash[:notice] = "Access Denied. You were not authorized to view that page"
       redirect_to root_path alert: 'Access Denied'
+    end
+  end
+
+  def require_login
+    if current_user === nil
+      flash[:notice] = "You are not logged in and/or signed up yet. Please Try again"
+      redirect_to login_path
     end
   end
 end

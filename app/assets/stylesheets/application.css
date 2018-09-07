@@ -202,6 +202,7 @@ background-color: #becde5;
   text-align: center;
   background: linear-gradient(#1669ad, #1c4fa0);
   box-shadow: 2px 2px 2px;
+  font-size: 2em;
 }
 
 .course_list div a{
