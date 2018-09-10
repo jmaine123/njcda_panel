@@ -1,45 +1,48 @@
-<h1><%=@cohort.name%> for <%= @course.name%> Course</h1>
-<p><strong>Start Date:</strong> <%=(@cohort.start_date).strftime('%a, %B %e, %Y')%></p>
-<p><strong>End Date:</strong> <%=(@cohort.end_date).strftime('%a, %B %e, %Y')%></p>
+<div class="cohort_div">
 
-<% if logged_in? && current_user.admin === true %>
-<%=link_to 'Edit', edit_course_cohort_path%><br><br>
-<%end%>
+  <h1><%=@cohort.name%> for <%= @course.name%> Course</h1>
+  <p><strong>Start Date:</strong> <%=(@cohort.start_date).strftime('%a, %B %e, %Y')%></p>
+  <p><strong>End Date:</strong> <%=(@cohort.end_date).strftime('%a, %B %e, %Y')%></p>
 
-<div class="student_teacher">
-  <h2>List of Students enrolled in Cohort</h2>
-  <h2>Instructor</h2>
-  <div class = 'cohort_students'>
-
-    <ul>
-      <% @cohort.students.each do |student|%>
-        <li><%=link_to "#{student.full_name}", course_cohort_student_path(@course.id,@cohort.id,student)%></li>
-      <%end%>
-    </ul>
-
-  </div>
-
-  <div class = 'cohort_instructor'>
-    <div class="profile_pic">
-      <img src="https://www.kodefork.com/static/users/images/user.png" alt="">
-    </div>
-    <ul>
-      <%if @instructor != nil %>
-      <li><%=link_to "#{@cohort.instructor.full_name}", course_cohort_instructor_path(@course.id, @cohort.id, @instructor)%></li>
-      <%end%>
-    </ul>
-
-  </div>
   <% if logged_in? && current_user.admin === true %>
-  <%=link_to 'Register Student to Cohort', new_course_cohort_student_path(@course.id, @cohort.id)%>
-  <% if @cohort.instructor === nil %>
-  <%=link_to 'Add a Instructor to Cohort', new_course_cohort_instructor_path(@course.id, @cohort.id)%>
+  <%=link_to 'Edit', edit_course_cohort_path%><br><br>
   <%end%>
 
-  <%end%>
+  <div class="student_teacher">
+    <h2>List of Students enrolled in Cohort</h2>
+    <h2>Instructor</h2>
+    <div class = 'cohort_students'>
+
+      <ul>
+        <% @cohort.students.each do |student|%>
+        <li><%=link_to "#{student.full_name}", course_cohort_student_path(@course.id,@cohort.id,student)%></li>
+        <%end%>
+      </ul>
+
+    </div>
+
+    <div class = 'cohort_instructor'>
+      <div class="profile_pic">
+        <img src="https://www.kodefork.com/static/users/images/user.png" alt="">
+      </div>
+      <ul>
+        <%if @instructor != nil %>
+        <li><%=link_to "#{@cohort.instructor.full_name}", course_cohort_instructor_path(@course.id, @cohort.id, @instructor)%></li>
+        <%end%>
+      </ul>
+
+    </div>
+    <% if logged_in? && current_user.admin === true %>
+    <%=link_to 'Register Student to Cohort', new_course_cohort_student_path(@course.id, @cohort.id)%>
+    <% if @cohort.instructor === nil %>
+    <%=link_to 'Add a Instructor to Cohort', new_course_cohort_instructor_path(@course.id, @cohort.id)%>
+    <%end%>
+
+    <%end%>
+  </div>
+
+
+
+
+  <%= link_to "Back to #{@course.name}", course_path(@course.id)%>
 </div>
-
-
-
-
-<%= link_to "Back to #{@course.name}", course_path(@course.id)%>

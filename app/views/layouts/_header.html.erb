@@ -9,6 +9,7 @@
     <div class="users"><%=link_to 'Users', users_index_path%></div>
     <% else%>
     <div class=""><%=link_to 'Courses', courses_index_path%></div>
+    <div class=""><%=link_to 'Cohorts', cohorts_index_path%></div>
     <%end%>
     <div class='home'><%= link_to 'Log Out',logout_path, method: :delete%></div>
   <%else%>

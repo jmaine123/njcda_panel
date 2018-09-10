@@ -1,7 +1,7 @@
 class CohortsController < ApplicationController
   before_action :find_cohort, only: [:show, :edit, :update, :destroy]
-  before_action :find_course
-  before_action :find_instructor, except: [:new, :create]
+  before_action :find_course, except: [:index]
+  before_action :find_instructor, except: [:new, :create, :index]
   before_action :admin_only, except:[:index, :show]
   before_action :require_login
 

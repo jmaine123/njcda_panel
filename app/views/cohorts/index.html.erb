@@ -1,8 +1,20 @@
-<h1>List of all Cohorts available for <%=@course.name%></h1>
-<ul>
-  <% @course.cohorts.order('NAME ASC').each do |c|%>
-    <li><%=link_to "#{c.name}", course_cohort_path(@course.id, c.id)%></li>
-  <%end%>
-</ul>
+<h1>List of all Cohorts available</h1>
 
-<%= link_to "Add a new Cohort", new_course_cohort_path%>
+  <table class="index">
+    <tr class ='list_header'>
+      <th>Name</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Max Student Limit</th>
+    </tr>
+    <% @cohorts.each do |i|%>
+    <tr>
+      <td> <%=i.name%></td>
+      <% if i.start_date != nil && i.end_date != nil%>
+      <td><%=i.start_date.strftime('%a, %B %e, %Y')%></td>
+      <td><%=i.end_date.strftime('%a, %B %e, %Y')%></td>
+      <%end%>
+      <td><%=i.max_students%></td>
+    </tr>
+    <%end%>
+  </table>
