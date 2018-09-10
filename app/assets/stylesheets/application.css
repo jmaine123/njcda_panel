@@ -46,6 +46,10 @@ h1, h2, h3{
   color: white;
 }
 
+a{
+  text-decoration: none;
+}
+
 .nav{
   grid-area: nav;
   display: grid;
@@ -90,6 +94,26 @@ background-color: #becde5;
   background-color:rgba(98, 151, 231, 0.7);
   height:100%;
 
+}
+
+.index{
+  width:80%;
+  margin: 5% auto;
+  border: 1px solid #1669ad;
+  background-color:rgba(98, 151, 231, 0.7);
+  color:white;
+  text-align: center;
+  border-radius: 5%;
+  font-size: 1.2em;
+  line-height: 2em;
+}
+
+.index  th, td{
+  border: 1px solid #07477a;
+}
+
+.list_header{
+  background-color: #1669ad;
 }
 
 .notice{
@@ -159,9 +183,19 @@ background-color: #becde5;
   padding: 2%;
 }
 
-.student_teacher div{
+.student_teacher .cohort_students{
   border: 1px solid black;
   overflow: auto;
+}
+
+.cohort_instructor{
+  display: grid;
+  grid-template: 100%/40% 60%;
+}
+
+.cohort_instructor img{
+  height: 50%;
+  width: 100%;
 }
 
 .login{
@@ -245,7 +279,7 @@ font-size: 1.2em;
 }
 
 .name{
-  width:40%;
+  width:30%;
 }
 
 .email{

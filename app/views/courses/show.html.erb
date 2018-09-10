@@ -7,6 +7,7 @@
 
       <h1><%=@course.name%></h1>
       <p><%= @course.total_hours%> hours per week</p>
+      <p>$<%= @course.tuition%></p>
 
       <% if logged_in? && current_user.admin === true %>
       <%= link_to 'Edit Course Information', edit_course_path%>
@@ -18,7 +19,6 @@
         <%end%>
       </ul>
 
-      <br><br>
       <% if logged_in? && current_user.admin === true %>
       <%= link_to "Add a new Cohort", new_course_cohort_path(@course.id)%>
       <%end%>

@@ -12,7 +12,7 @@ before_action :require_login
     @instructor = Instructor.new(instructor_params)
     @instructor.cohort_id = @cohort.id
     @instructor.course_id = @course.id
-    generate_instructor_id
+    @instructor.generate_instructor_id
     if @instructor.save
       flash[:notice] = "Instructor successfully registered"
       redirect_to course_cohort_instructor_path(@course.id,@instructor.cohort_id, @instructor)

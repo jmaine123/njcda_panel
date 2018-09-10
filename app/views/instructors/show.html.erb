@@ -1,10 +1,12 @@
-<h1><%=@instructor.full_name%></h1>
-<p>Age: <%=@instructor.age%></p>
-<p>Email: <%=@instructor.email%></p>
-<p>Yearly salary: <%= @instructor.salary%></p>
-<p>Registered on: <%=(@instructor.created_at).strftime('%a %B %e, %Y')%></p>
+<div class="index">
+  <h1><%=@instructor.full_name%></h1>
+  <p>Age: <%=@instructor.age%></p>
+  <p>Email: <%=@instructor.email%></p>
+  <p>Yearly salary: <%= @instructor.salary%></p>
+  <p>Registered on: <%=(@instructor.created_at).strftime('%a %B %e, %Y')%></p>
 
-<% if logged_in? && current_user.admin === true %>
-<%=link_to 'Edit', edit_course_cohort_instructor_path(@course.id, @cohort.id, @instructor)%><br>
-<%end%>
-<%= link_to 'Back to Cohort', course_cohort_path(@course.id, @cohort.id)%>
+  <% if logged_in? && current_user.admin === true %>
+  <%=link_to 'Edit', edit_course_cohort_instructor_path(@course.id, @cohort.id, @instructor)%><br>
+  <%end%>
+  <%= link_to 'Back to Cohort', course_cohort_path(@course.id, @cohort.id)%>
+</div>

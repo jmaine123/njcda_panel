@@ -20,7 +20,9 @@
   </div>
 
   <div class = 'cohort_instructor'>
-
+    <div class="profile_pic">
+      <img src="https://www.kodefork.com/static/users/images/user.png" alt="">
+    </div>
     <ul>
       <%if @instructor != nil %>
       <li><%=link_to "#{@cohort.instructor.full_name}", course_cohort_instructor_path(@course.id, @cohort.id, @instructor)%></li>

@@ -1,4 +1,17 @@
 <h1>List of all Students</h1>
-<% @students.each do |s|%>
-  <h3><%=s.full_name %></h3>
-<%end%>
+<table class="index">
+  <tr class ='list_header'>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Age</th>
+  </tr>
+  <% @students.each do |i|%>
+  <tr>
+    <td> <%=i.first_name%></td>
+    <td><%=i.last_name%></td>
+    <td><%=i.email%></td>
+    <td><%=i.age%></td>
+  </tr>
+  <%end%>
+</table>

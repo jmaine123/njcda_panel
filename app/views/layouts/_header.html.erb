@@ -3,10 +3,14 @@
   </div>
   <div class = 'home'><i class="fas fa-home"></i><%=link_to 'Dashboard', root_path%></div>
   <% if logged_in?%>
-  <div class="instructors"><%=link_to 'Instructors', instructors_index_path%></div>
-  <div class="students"><%= link_to 'Students', students_index_path%></div>
-  <div class="users"><%=link_to 'Users', users_index_path%></div>
-  <div class='home'><%= link_to 'Log Out',logout_path, method: :delete%></div>
+    <div class="instructors"><%=link_to 'Instructors', instructors_index_path%></div>
+    <div class="students"><%= link_to 'Students', students_index_path%></div>
+    <% if current_user.admin === true %>
+    <div class="users"><%=link_to 'Users', users_index_path%></div>
+    <% else%>
+    <div class=""><%=link_to 'Courses', courses_index_path%></div>
+    <%end%>
+    <div class='home'><%= link_to 'Log Out',logout_path, method: :delete%></div>
   <%else%>
   <div class = 'home'><i class="fas fa-sign-in-alt"></i><%=link_to 'Log In', login_path%></div>
   <div class ='signup' ><i class="fas fa-user-plus"></i><%=link_to 'Sign Up', users_new_path%></div>

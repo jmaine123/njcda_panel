@@ -11,7 +11,7 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
     @student.cohort_id = @cohort.id
     @student.course_id = @course.id
-    generate_student_id
+    @student.generate_student_id
     if @student.save
       msg = "New Student #{@student.first_name} registered"
       redirect_to course_cohort_path(@course.id,@student.cohort_id, @student)

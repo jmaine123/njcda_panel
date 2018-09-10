@@ -1,7 +1,23 @@
-<h1>List of All instructors</h1>
+  <h1>List of All instructors</h1>
+  <div>
+    <table class="index">
+      <tr class='list_header'>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Age</th>
+      </tr>
+      <% @instructors.each do |i|%>
+      <tr>
+        <td> <%=i.first_name%></td>
+        <td><%=i.last_name%></td>
+        <td><%=i.email%></td>
+        <td><%=i.age%></td>
+      </tr>
+      <%end%>
+    </table>
 
-<% @instructors.each do |i|%>
-  <h3> <%=i.full_name%><br>
-<%end%>
+</div>
+
 
 <br>
