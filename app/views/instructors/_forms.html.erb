@@ -2,11 +2,11 @@
 
   <%= f.text_field :first_name, placeholder: 'Enter First Name',class:'name' %>
   <%= f.text_field :last_name, placeholder: 'Enter Last Name', class:'name' %><br>
-  <%= f.email_field :email, placeholder: 'Enter email', class: 'email'%><br>
-  <%= f.telephone_field :phone_number, placeholder: 'phone number' %><br>
-  <%= f.number_field :salary, placeholder: 'Enter salary'%><br>
-  <%= f.number_field :age, placeholder: 'age', class:'age'%><br><br>
-  <%= label_tag("Highest completed education:") %><br><br>
+  <%= f.email_field :email, placeholder: 'Enter Email', class: 'email'%>
+  <%= f.telephone_field :phone_number, placeholder: 'Phone Number' %><br>
+  <%= f.number_field :salary, placeholder: 'Enter Salary'%><br>
+  <%= f.number_field :age, placeholder: 'Age', class:'age'%><br><br>
+  <%= label_tag("Highest Completed Education:") %><br>
   <%= f.radio_button(:education, 'High School')%> High School<br>
   <%= f.radio_button(:education, 'College')%>College<br>
   <%= f.radio_button(:education, 'Masters') %> Masters<br>

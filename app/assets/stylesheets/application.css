@@ -44,6 +44,7 @@ button:hover{
 
 h1, h2, h3{
   color: white;
+  text-align: center;
 }
 
 a{
@@ -64,6 +65,7 @@ a{
 
 .nav div:hover{
 background-color: #becde5;
+color: var(--dashboard);
 }
 
 .nav div{
@@ -181,6 +183,8 @@ background-color: #becde5;
 
 .student_teacher div li{
   padding: 2%;
+  font-size: 1.5em;
+  list-style: none;
 }
 
 .student_teacher .cohort_students{
@@ -287,6 +291,10 @@ font-size: 1.2em;
   background-color: rgba(98, 151, 231, .5);
 }
 
+.bottom_form{
+  margin-top: 2%;
+}
+
 .name{
   width:30%;
 }
@@ -332,6 +340,9 @@ input{
   border-radius: 7%;
   background-color: #1669ad;
   color: white;
+  border: 1px solid white;
+  font-size: 1em;
+  padding:.5%;
 }
 
 .submit-btns:hover{

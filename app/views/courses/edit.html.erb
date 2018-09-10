@@ -1,7 +1,10 @@
-<h1><%=@course.name%></h1>
+<div class="forms">
+  <h1><%=@course.name%></h1>
 
-<%= render 'forms'%>
+  <%= render 'forms'%>
 
-<%=link_to 'Delete Course', course_path(@course.id), method: :delete, data: { confirm: "Are you sure you want to delete #{@course.name} ?"}%><br>
+  <%=link_to 'Delete Course', course_path(@course.id), method: :delete, data: { confirm: "Are you sure you want to delete #{@course.name} ?"}, class:'terminate-btns'%><br>
 
-<%= link_to 'Back to Cohort', courses_path%>
+  <%= link_to 'Back to Cohort', courses_path, class:'submit-btns'%>
+
+</div>

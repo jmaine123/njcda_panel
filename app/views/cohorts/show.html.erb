@@ -5,11 +5,11 @@
   <p><strong>End Date:</strong> <%=(@cohort.end_date).strftime('%a, %B %e, %Y')%></p>
 
   <% if logged_in? && current_user.admin === true %>
-  <%=link_to 'Edit', edit_course_cohort_path%><br><br>
+  <%=link_to 'Edit', edit_course_cohort_path, class: 'submit-btns'%><br><br>
   <%end%>
 
   <div class="student_teacher">
-    <h2>List of Students enrolled in Cohort</h2>
+    <h2>List of Students enrolled</h2>
     <h2>Instructor</h2>
     <div class = 'cohort_students'>
 

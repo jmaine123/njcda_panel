@@ -3,10 +3,10 @@
   </div>
   <div class = 'home'><i class="fas fa-home"></i><%=link_to 'Dashboard', root_path%></div>
   <% if logged_in?%>
-    <div class="instructors"><%=link_to 'Instructors', instructors_index_path%></div>
-    <div class="students"><%= link_to 'Students', students_index_path%></div>
+    <div class="instructors"><i class="fas fa-chalkboard-teacher"></i><%=link_to 'Instructors', instructors_index_path%></div>
+    <div class="students"><i class="fas fa-user-graduate"></i><%= link_to 'Students', students_index_path%></div>
     <% if current_user.admin === true %>
-    <div class="users"><%=link_to 'Users', users_index_path%></div>
+    <div class="users"><i class="fas fa-users"></i><%=link_to 'Users', users_index_path%></div>
     <% else%>
     <div class=""><%=link_to 'Courses', courses_index_path%></div>
     <div class=""><%=link_to 'Cohorts', cohorts_index_path%></div>

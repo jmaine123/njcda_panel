@@ -1,8 +1,13 @@
-<h1><%=@instructor.full_name%></h1>
+<div class="forms">
+  <h1><%=@instructor.full_name%></h1>
 
-<%= render 'forms'%>
+  <%= render 'forms'%>
 
-<br>
-<%=link_to 'Terminate', course_cohort_instructor_path(@course.id, @cohort.id, @instructor.id), method: :delete, data: { confirm: "Are you sure you want to terminate #{@instructor.full_name} ?"}%><br>
+  <div class="bottom_form">
 
-<%= link_to 'Back to Cohort', course_cohort_path(@course.id, @cohort.id)%>
+    <%=link_to 'Terminate', course_cohort_instructor_path(@course.id, @cohort.id, @instructor.id), method: :delete, data: { confirm: "Are you sure you want to terminate #{@instructor.full_name} ?"}, class:'submit-btns'%>
+
+    <%= link_to 'Back to Cohort', course_cohort_path(@course.id, @cohort.id), class:'submit-btns'%>
+  </div>
+
+</div>

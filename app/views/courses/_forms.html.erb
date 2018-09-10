@@ -3,7 +3,8 @@
 
   <%= f.text_field :name, placeholder: 'Course name', required:true %><br><br>
   <%= f.number_field :total_hours, placeholder: 'Total hours per week', required:true %> per week<br><br>
+  <%= f.number_field :tuition, placeholder: 'cost of tuition', require: true %> <br>
 
-  <%= f.submit 'Create'%>
+  <%= f.submit 'Create', class:'submit-btns'%>
 
   <%end%>
