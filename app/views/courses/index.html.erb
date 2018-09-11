@@ -1,9 +1,12 @@
 <h1>All Courses</h1>
 
 <div class = 'course_list'>
-  <%color = ['red','blue','yellow']%>
   <% @courses.each do |c|%>
-    <div><%=link_to c.name, c%></div>
+    <div>
+      <h3><%=link_to c.name, c %></h3>
+      <p>Tuition: $ <%=c.tuition%></p>
+      <p>Hours per week: <%=c.total_hours%></p>
+    </div>
   <%end%>
 </div>
 <% if logged_in? && current_user.admin === true %>

@@ -53,6 +53,10 @@ h1, h2, h3{
   text-align: center;
 }
 
+p{
+  color: white;
+}
+
 a{
   text-decoration: none;
 }
@@ -208,6 +212,21 @@ color: var(--dashboard);
   color: white;
 }
 
+.icon_space{
+  display: grid;
+  grid-template: 100%/60% 35%;
+  grid-gap: 5%;
+  margin-top: 1%;
+}
+.fa-user-times{
+  font-size: 2em;
+  color: var(--dark)
+}
+
+.nav_icon{
+  font-size: 1em;
+}
+
 .cohort_instructor{
   display: grid;
   grid-template: 100%/40% 60%;
@@ -260,7 +279,7 @@ color: var(--dashboard);
   text-align: center;
   background: linear-gradient(#1669ad, #1c4fa0,rgb(5, 49, 78));
   box-shadow: 2px 2px 2px;
-  font-size: 2em;
+  font-size: 1em;
 }
 
 .add_course{
@@ -276,14 +295,23 @@ color: var(--dashboard);
 font-size: 1.2em;
 }
 
+.add_btn_div{
+  display: grid;
+  grid-template: 100%/repeat(2, 1fr);
+  width: 50%;
+  margin: 0 auto;
+}
+
 .course_show{
   display: grid;
   grid-template: 100%/50% 50%;
   width: 70%;
   height: 60%;
-  margin: 10% auto;
+  margin: 5% auto;
   text-align: center;
-  box-shadow: 8px 8px 8px 8px;
+  box-shadow: 8px 8px 8px 5px var(--dark);
+  font-size: 1.4em;
+  border: 2px solid var(--dark);
 }
 
 #course_pic{

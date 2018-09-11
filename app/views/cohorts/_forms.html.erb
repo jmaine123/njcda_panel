@@ -2,8 +2,10 @@
   <%= form_for([@course, @cohort]) do |f|%>
 
   <%= f.text_field :name, placeholder: 'Cohorts name', required:true %><br><br>
-  <%= f.date_field :start_date, placeholder: 'Start Date', required:true %><br><br>
+  <%= f.date_field :start_date, placeholder: 'Start Date', required:true %>
   <%= f.date_field :end_date, placeholder: 'End Date', required:true%><br><br>
+  <%= f.number_field :max_students, placeholder: 'Max # of students', required:true%><br><br>
+  <%= f.number_field :days_per_week, placeholder: 'Days per week', required:true %><br>
 
   <%= f.submit 'Create'%>
 

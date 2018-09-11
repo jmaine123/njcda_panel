@@ -67,7 +67,7 @@ class CohortsController < ApplicationController
   end
 
   def cohort_params
-    params.require(:cohort).permit(:name, :start_date, :end_date)
+    params.require(:cohort).permit(:name, :start_date, :end_date, :max_students, :days_per_week)
   end
 
   def admin_only

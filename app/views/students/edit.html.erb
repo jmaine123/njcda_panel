@@ -1,7 +1,10 @@
-<h1><%=@student.full_name%></h1>
+<div class="forms">
+  <h1><%=@student.full_name%></h1>
 
-<%=render 'forms'%>
-<br>
-<%=link_to 'Remove Student', course_cohort_student_path(@course.id, @cohort.id, @student.id), method: :delete, data: { confirm: "Are you sure you want to remove #{@student.full_name} ?" }%><br><br>
+  <%=render 'forms'%>
+  <br>
+  <%=link_to 'Remove Student', course_cohort_student_path(@course.id, @cohort.id, @student.id), method: :delete, data: { confirm: "Are you sure you want to remove #{@student.full_name} ?" }%><br><br>
 
-<%= link_to 'Back to Cohort', course_cohort_path(@course.id, @cohort.id)%>
+  <%= link_to 'Back to Cohort', course_cohort_path(@course.id, @cohort.id)%>
+
+</div>

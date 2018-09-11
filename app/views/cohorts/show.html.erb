@@ -15,7 +15,10 @@
 
       <ul>
         <% @cohort.students.each do |student|%>
-        <li><%=link_to "#{student.full_name}", course_cohort_student_path(@course.id,@cohort.id,student)%></li>
+        <div class="icon_space">
+          <li><%=link_to "#{student.full_name}", course_cohort_student_path(@course.id,@cohort.id,student)%></li>
+          <i class="fas fa-user-times"></i>
+        </div>
         <%end%>
       </ul>
 
@@ -41,8 +44,6 @@
     <%end%>
   </div>
 
-
-
-
   <%= link_to "Return to #{@course.name}", course_path(@course.id), class:'submit-btns'%>
+
 </div>
