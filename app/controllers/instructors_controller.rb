@@ -1,7 +1,7 @@
 class InstructorsController < ApplicationController
 before_action :find_instructor, only: [:show, :edit, :update, :destroy]
 before_action :find_course_cohort, except: [:index]
-before_action :admin_only, except: [:index, :show]
+before_action :admin_only, except: [:index]
 before_action :require_login
 
   def new
@@ -38,9 +38,10 @@ before_action :require_login
   end
 
   def destroy
-    @instructor.destroy
+    # @instructor.destroy
     flash[:success] = "Instructor has been deleted from the database!"
-    redirect_to course_cohort_path(@course.id, @cohort.id)
+    # redirect_to course_cohort_path(@course.id, @cohort.id)
+    redirect_to root_path
   end
 
   def show

@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
   get 'users/new'
-  get 'users/edit'
   get 'users/index'
-  get 'users/show'
+
 
   get 'courses/new'
   get 'courses/edit'
   get 'courses/index'
   get 'courses/show'
+
   get 'cohorts/new'
   get 'cohorts/edit'
   get 'cohorts/show'
@@ -39,6 +39,5 @@ delete '/logout' => 'sessions#destroy'
   get 'instructors/edit'
   get 'instructors/show'
 
-  get 'pages/settings'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

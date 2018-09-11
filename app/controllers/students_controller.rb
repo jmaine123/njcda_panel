@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   before_action :find_student, only: [:show, :edit, :update, :destroy]
   before_action :find_course_cohort, except: [:index]
-  before_action :admin_only, except: [:index, :show]
+  before_action :admin_only, except: [:index]
   before_action :require_login
   def new
     @student = Student.new
@@ -42,8 +42,12 @@ class StudentsController < ApplicationController
 
   def destroy
     @student.destroy
-    flash[:success] = "A student has been deleted from the #{@cohort.name}!"
-    redirect_to course_cohort_path(@course.id, @cohort.id)
+    flash[:notice] = "A student has been deleted from the #{@cohort.name}!"
+    # redirect_to course_cohort_path(@course.id, @cohort.id)
+    respond_to do |format|
+      format.js
+      format.html { p 'html response'; redirect_to root_path}
+    end
   end
 
   def show

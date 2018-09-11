@@ -212,14 +212,14 @@ color: var(--dashboard);
   color: white;
 }
 
-.icon_space{
+.icon_space li{
   display: grid;
   grid-template: 100%/60% 35%;
   grid-gap: 5%;
   margin-top: 1%;
 }
 .fa-user-times{
-  font-size: 2em;
+  font-size: 1em;
   color: var(--dark)
 }
 
