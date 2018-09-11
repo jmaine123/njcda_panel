@@ -1,7 +1,7 @@
 <%= form_for([@course, @cohort, @student]) do |f|%>
 
   <%= f.text_field :first_name, placeholder: 'Enter First Name', class:'name' %>
-  <%= f.text_field :last_name, placeholder: 'Enter Last Name' class: 'name'%><br>
+  <%= f.text_field :last_name, placeholder: 'Enter Last Name', class: 'name'%><br>
   <%= f.email_field :email, placeholder: 'Enter email', class:'email' %><br>
   <%= f.telephone_field :phone_number, placeholder: 'phone number'%>
   <%= f.number_field :age, placeholder: 'age', class:'age' %><br><br>

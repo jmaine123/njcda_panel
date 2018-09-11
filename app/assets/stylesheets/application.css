@@ -54,7 +54,7 @@ a{
 .nav{
   grid-area: nav;
   display: grid;
-  grid-template: repeat(10,1fr)/100%;
+  grid-template: repeat(8,1fr)/100%;
   background-color: #5372a4;
   margin:0;
   height: 100%;
