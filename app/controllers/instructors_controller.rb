@@ -49,7 +49,7 @@ before_action :require_login
   private
 
   def instructor_params
-    params.require(:instructor).permit(:first_name, :last_name, :email, :age, :salary, :education)
+    params.require(:instructor).permit(:first_name, :last_name, :email, :age, :salary, :education, :phone_number)
   end
 
   def find_instructor

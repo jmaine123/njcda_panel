@@ -12,12 +12,14 @@ class StudentsController < ApplicationController
     @student.cohort_id = @cohort.id
     @student.course_id = @course.id
     @student.generate_student_id
-    if @student.save
-      msg = "New Student #{@student.first_name} registered"
-      redirect_to course_cohort_path(@course.id,@student.cohort_id, @student)
-      flash[:success] = msg
-    else
-      render 'new'
+    if (@cohort.students.count <= @cohort.max_students) || @cohort.max_students == nil
+      if @student.save
+        msg = "New Student #{@student.first_name} registered"
+        redirect_to course_cohort_path(@course.id,@student.cohort_id, @student)
+        flash[:success] = msg
+      else
+        render 'new'
+      end
     end
   end
 
@@ -50,7 +52,7 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-    params.require(:student).permit(:first_name, :last_name, :email, :age, :education)
+    params.require(:student).permit(:first_name, :last_name, :email, :age, :education, :phone_number)
   end
 
   def find_student

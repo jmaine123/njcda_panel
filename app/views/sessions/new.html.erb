@@ -8,8 +8,8 @@
   <h3>Don't have a Account? <%= link_to 'Create Account', new_user_path%></h3>
 
   <%= form_for(:session, url: login_path) do |f|%>
-  <%=f.email_field :email, placeholder: 'Email', required: true %> <br><br>
-  <%= f.password_field :password, placeholder: "Password", required: true %> <br>
+  <%=f.email_field :email, placeholder: 'Email', class:'email', required: true %> <br><br>
+  <%= f.password_field :password, placeholder: "Password", class: 'email', required: true %> <br>
 
   <%= f.submit 'Log in', class:'submit-btns'%>
 

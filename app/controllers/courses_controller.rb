@@ -49,7 +49,7 @@ class CoursesController < ApplicationController
   end
 
   def course_params
-    params.require(:course).permit(:name, :total_hours)
+    params.require(:course).permit(:name, :total_hours, :tuition)
   end
 
   def admin_only

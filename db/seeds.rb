@@ -25,4 +25,8 @@ courses = Course.create(
 }
 )
 
-cohort = Cohorts
+cohort = Cohort.create(
+  {
+    name: 'Faker'
+  }
+)

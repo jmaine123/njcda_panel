@@ -8,6 +8,6 @@
 </div>
 <% if logged_in? && current_user.admin === true %>
 
-<button 'add_course'type="button"><%= link_to 'Add Course', new_course_path%></button>
+<button class='add_course'type="button"><%= link_to 'Add Course', new_course_path%></button>
 <br><br>
 <%end%>
