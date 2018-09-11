@@ -38,10 +38,14 @@ before_action :require_login
   end
 
   def destroy
-    # @instructor.destroy
+    @instructor.destroy
     flash[:success] = "Instructor has been deleted from the database!"
     # redirect_to course_cohort_path(@course.id, @cohort.id)
-    redirect_to root_path
+    # redirect_to root_path
+    respond_to do |format|
+      format.js
+      format.html { p 'html response'; redirect_to root_path}
+    end
   end
 
   def show

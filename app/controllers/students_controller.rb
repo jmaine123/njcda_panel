@@ -12,7 +12,7 @@ class StudentsController < ApplicationController
     @student.cohort_id = @cohort.id
     @student.course_id = @course.id
     @student.generate_student_id
-    if (@cohort.students.count <= @cohort.max_students) || @cohort.max_students == nil
+    if @cohort.max_students == nil ||(@cohort.students.count <= @cohort.max_students)
       if @student.save
         msg = "New Student #{@student.first_name} registered"
         redirect_to course_cohort_path(@course.id,@student.cohort_id, @student)

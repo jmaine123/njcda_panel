@@ -34,15 +34,15 @@
       </ul>
 
     </div>
-    <% if logged_in? && current_user.admin === true %>
-    <%=link_to 'Register Student to Cohort', new_course_cohort_student_path(@course.id, @cohort.id)%>
-    <% if @cohort.instructor === nil %>
-    <%=link_to 'Add a Instructor to Cohort', new_course_cohort_instructor_path(@course.id, @cohort.id)%>
-    <%end%>
-
-    <%end%>
   </div>
+    <% if logged_in? && current_user.admin === true %>
+    <%=link_to 'Register Student to Cohort', new_course_cohort_student_path(@course.id, @cohort.id), class:'submit-btns'%>
+    <% if @cohort.instructor === nil %>
+    <%=link_to 'Add a Instructor to Cohort', new_course_cohort_instructor_path(@course.id, @cohort.id), class:'submit-btns', id:'register_instructor'%>
+    <%end%>
 
-  <%= link_to "Return to #{@course.name}", course_path(@course.id), class:'submit-btns'%>
+    <%end%>
+
+    <%= link_to "Return to #{@course.name}", course_path(@course.id), class:'submit-btns'%>
 
 </div>
