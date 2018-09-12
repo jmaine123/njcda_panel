@@ -1,9 +1,11 @@
-<div class="index">
+<div class="forms">
   <h1><%=@instructor.full_name%></h1>
-  <p>Age: <%=@instructor.age%></p>
-  <p>Email: <%=@instructor.email%></p>
-  <p>Yearly salary: <%= @instructor.salary%></p>
-  <p>Registered on: <%=(@instructor.created_at).strftime('%a %B %e, %Y')%></p>
+  <h3>Age: <%=@instructor.age%></h3>
+  <h3>Employee ID:<%=@instructor.employee_id.first(10)%></h3>
+  <h3>Email: <%=@instructor.email%></h3>
+  <h3>Course: <%=@course.name%></h3>
+  <h3>Yearly salary: <%= @instructor.salary%></h3>
+  <h3>Registered on: <%=(@instructor.created_at).strftime('%a %B %e, %Y')%></h3>
 
   <% if logged_in? && current_user.admin === true %>
   <%=link_to 'Edit', edit_course_cohort_instructor_path(@course.id, @cohort.id, @instructor)%><br>

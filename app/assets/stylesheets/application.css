@@ -349,7 +349,7 @@ font-size: 1.2em;
   padding: 5%;
   margin: 10% auto;
   box-shadow: -5px -5px 8px #135890;
-  background-color: rgba(98, 151, 231, .7);
+  background-color: rgba(98, 151, 231, .8);
 }
 
 .bottom_form{
@@ -443,4 +443,8 @@ text-shadow: 1px 1px #07477a;
 
 .course_trash{
   margin-right: -80%;
+}
+
+.chart_container{
+  overflow: auto;
 }

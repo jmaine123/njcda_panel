@@ -26,6 +26,8 @@ class User < ApplicationRecord
     student = 'abc123'
     if self.auth_code === admin
       self.admin = true
+      self.instructor = false
+      self.student = false
     elsif self.auth_code === instructor
       self.admin = false
       self.instructor = true

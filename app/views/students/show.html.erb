@@ -1,9 +1,10 @@
-<div class="index">
+<div class="forms">
   <h1><%=@student.full_name%></h1>
-  <p>Age: <%=@student.age%></p>
-  <p>Email: <%=@student.email%></p>
-  <p><%=@course.name%></p>
-  <p>Registered date: <%=@student.created_at.strftime('%a %B %e, %Y  %l:%M%P')%></p>
+  <h3>Age: <%=@student.age%></h3>
+  <h3>Email: <%=@student.email%></h3>
+  <h3>Course enrolled: <%=@course.name%></h3>
+  <h3>Student ID: <%=@student.student_id.first(12)%></h3>
+  <h3>Registered date: <%=@student.created_at.strftime('%a %B %e, %Y  %l:%M%P')%></h3>
 
   <% if current_user.admin === true %>
   <p><%=link_to 'Edit', edit_course_cohort_student_path(@course.id,@cohort.id, @student)%></p>

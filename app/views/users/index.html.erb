@@ -1,10 +1,12 @@
 <h1>Pamela Panel User's</h1>
-<table class="index">
+<table class="chart">
   <tr class='list_header'>
     <th>First Name</th>
     <th>Last Name</th>
     <th>Email</th>
     <th>Admin</th>
+    <th>Instructor</th>
+    <th>Student</th>
   </tr>
   <% @users.each do |i|%>
   <tr>
@@ -12,6 +14,8 @@
     <td><%=i.last_name%></td>
     <td><%=i.email%></td>
     <td><%=i.admin%></td>
+    <td><%=i.instructor%></td>
+    <td><%=i.student%></td>
   </tr>
   <%end%>
 </table>
