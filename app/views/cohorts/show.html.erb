@@ -16,7 +16,10 @@
       <ul>
         <% @cohort.students.each do |student|%>
         <div class="icon_space">
-          <li><%=link_to "#{student.full_name}", course_cohort_student_path(@course.id,@cohort.id,student)%><i><%= link_to '', course_cohort_student_path(@course.id, @cohort.id, student.id), method: :delete, data: { confirm: "Are you sure you want to remove #{student.full_name}?", remote: true}, class:'fas fa-user-times terminate'%></i></li>
+          <li><%=link_to "#{student.full_name}", course_cohort_student_path(@course.id,@cohort.id,student)%>
+            <% if logged_in? && current_user.admin === true %>
+            <i><%= link_to '', course_cohort_student_path(@course.id, @cohort.id, student.id), method: :delete, data: { confirm: "Are you sure you want to remove #{student.full_name}?", remote: true}, class:'fas fa-user-times terminate'%></i></li>
+            <%end%>
         </div>
         <%end%>
       </ul>
@@ -29,7 +32,10 @@
       </div>
       <ul>
         <%if @instructor != nil %>
-        <li><%=link_to "#{@instructor.full_name}", course_cohort_instructor_path(@course.id, @cohort.id, @instructor)%><i><%=link_to '', course_cohort_instructor_path(@course.id, @cohort.id, @instructor.id), method: :delete, data: { confirm: "Are you sure you want to terminate #{@instructor.full_name}?", remote: true}, class:"fas fa-user-times terminate"%></i></li>
+        <li><%=link_to "#{@instructor.full_name}", course_cohort_instructor_path(@course.id, @cohort.id, @instructor), class:'instructor_full_name'%>
+          <% if logged_in? && current_user.admin === true %>
+            <i><%=link_to '', course_cohort_instructor_path(@course.id, @cohort.id, @instructor.id), method: :delete, data: { confirm: "Are you sure you want to terminate #{@instructor.full_name}?", remote: true}, class:"fas fa-user-times terminate"%></i></li>
+          <%end%>
         <%end%>
       </ul>
 

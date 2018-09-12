@@ -328,6 +328,8 @@ font-size: 1.2em;
 
 .cohort_div{
   padding: 3%;
+  text-shadow: 1px 1px black;
+  font-weight: 600;
 }
 
 
@@ -367,6 +369,7 @@ input{
   font-size: 15px;
   margin-top: 2%;
   margin-right: 2%;
+  padding: .5%;
 }
 
 .input{
@@ -408,4 +411,11 @@ input{
 
 #enter_btn{
   font-size: 3em;
+}
+
+.instructor_full_name{
+  color: white;
+  font-weight:600;
+  font-size: 1.3em;
+  text-shadow: 2px 2px black;
 }
