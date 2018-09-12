@@ -3,7 +3,7 @@
 
   <%= render 'forms'%>
 
-  <%=link_to 'Delete Course', course_path(@course.id), method: :delete, data: { confirm: "Are you sure you want to delete #{@course.name} ?"}, class:'terminate-btns'%><br>
+  <%=link_to 'Delete Course', course_path(@course.id), method: :delete, data: { confirm: "Are you sure you want to delete #{@course.name} ?"}, class:'terminate'%><br>
 
   <%= link_to 'Back to Cohort', courses_path, class:'submit-btns'%>
 

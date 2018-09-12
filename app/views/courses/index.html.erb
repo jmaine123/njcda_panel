@@ -1,11 +1,12 @@
 <h1>All Courses</h1>
 
-<div class = 'course_list'>
+<div class = 'course_list terminate'>
   <% @courses.each do |c|%>
     <div>
       <h3><%=link_to c.name, c %></h3>
       <p>Tuition: $ <%=c.tuition%></p>
       <p>Hours per week: <%=c.total_hours%></p>
+      <i><%=link_to '', course_path(c.id), method: :delete, data: { confirm: "Are you sure you want to delete #{c.name} ?"}, class:"course_trash fas fa-trash"%></i>
     </div>
   <%end%>
 </div>

@@ -70,7 +70,6 @@ a{
   background-color:var(--dashboard);
   margin:0;
   height: 100%;
-  /* opacity: .9; */
   list-style: none;
 
 }
@@ -229,6 +228,7 @@ color: var(--dashboard);
 
 .nav_icon{
   font-size: 1em;
+
 }
 
 .nav_icon i{
@@ -427,4 +427,20 @@ input{
   font-weight:600;
   font-size: 1.3em;
   text-shadow: 2px 2px black;
+}
+
+.chart{
+width: 80%;
+margin: 5% auto;
+border: 1px solid var(--dashboard);
+background-color: rgba(98, 151, 231, 0.8);
+color: white;
+text-align: center;
+font-size: 1.2em;
+line-height: 1em;
+text-shadow: 1px 1px #07477a;
+}
+
+.course_trash{
+  margin-right: -80%;
 }

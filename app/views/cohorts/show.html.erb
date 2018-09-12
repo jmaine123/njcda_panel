@@ -3,6 +3,7 @@
   <h1><%=@cohort.name%> for <%= @course.name%> Course</h1>
   <p><strong>Start Date:</strong> <%=(@cohort.start_date).strftime('%a, %B %e, %Y')%></p>
   <p><strong>End Date:</strong> <%=(@cohort.end_date).strftime('%a, %B %e, %Y')%></p>
+  <p>Days per week: <%=@cohort.days_per_week%></p>
 
   <% if logged_in? && current_user.admin === true %>
   <%=link_to 'Edit', edit_course_cohort_path, class: 'submit-btns'%><br><br>
