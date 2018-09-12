@@ -1,20 +1,21 @@
 <div class = "nav">
   <div class="logo">
   </div>
-  <div class = 'nav_icon'><i class="fas fa-home"></i><%=link_to 'Dashboard', root_path%></div>
+  <div class = 'nav_icon'><i class="fas fa-home"><%=link_to 'Home', root_path%></i></div>
   <% if logged_in?%>
-    <div class="nav_icon"><i class="fas fa-chalkboard-teacher"></i><%=link_to 'Instructors', instructors_index_path%></div>
-    <div class="nav_icon"><i class="fas fa-user-graduate"></i><%= link_to 'Students', students_index_path%></div>
-
-    <% if current_user.admin === true %>
-      <div class="nav_icon"><i class="fas fa-users"></i><%=link_to 'Users', users_index_path%></div>
-      <% else%>
-      <div class="nav_icon"><i class="fas fa-books"></i><%=link_to 'Courses', courses_index_path%></div>
-      <div class="nav_icon"><i class="fal fa-bell-school"></i><%=link_to 'Cohorts', cohorts_index_path%></div>
+    <div class="nav_icon"><i class="fas fa-chalkboard-teacher"><%=link_to 'Instructors', instructors_index_path%></i></div>
+    <% if current_user.student != true%>
+    <div class="nav_icon"><i class="fas fa-user-graduate"><%= link_to 'Students', students_index_path%></i></div>
     <%end%>
-    <div class='nav_icon'><%= link_to 'Log Out',logout_path, method: :delete%></div>
+    <% if current_user.admin === true %>
+      <div class="nav_icon"><i class="fas fa-users"><%=link_to 'Users', users_index_path%></i></div>
+      <% else%>
+      <div class="nav_icon"><i class="fas fa-book"><%=link_to 'Courses', courses_index_path%></i></div>
+      <div class="nav_icon"><i class="fas fa-school" ><%=link_to 'Cohorts', cohorts_index_path%></i></div>
+    <%end%>
+    <div class='nav_icon'><i class="fas fa-sign-out-alt"><%= link_to 'Log Out',logout_path, method: :delete%></i></div>
   <%else%>
-  <div class = 'nav_icon'><i class="fas fa-sign-in-alt"></i><%=link_to 'Log In', login_path%></div>
-  <div class ='nav_icon' ><i class="fas fa-user-plus"></i><%=link_to 'Sign Up', users_new_path%></div>
+  <div class = 'nav_icon'><i class="fas fa-sign-in-alt"><%=link_to 'Log In', login_path%></i></div>
+  <div class ='nav_icon' ><i class="fas fa-user-plus"><%=link_to 'Sign Up', users_new_path%></i></div>
   <%end%>
 </div>

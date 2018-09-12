@@ -1,7 +1,7 @@
 class Student < ApplicationRecord
   before_save {self.email = email.downcase}
   validates :email, uniqueness: true
-  validates :age, numericality: { less_than: 150, greater_than: 18 }
+  validates :age, numericality: { less_than: 150, greater_than: 17 }
   belongs_to :cohort
 
 

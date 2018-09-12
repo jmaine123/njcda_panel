@@ -13,7 +13,9 @@
         <% @course.cohorts.each do |coh|%>
         <p>
           <%= link_to "#{coh.name}", course_cohort_path(@course.id, coh.id) %>
-          <%=link_to 'Remove', course_cohort_path(@course.id, coh.id), method: :delete, data: { confirm: "Are you sure you want to delete #{coh.name} ?"}%>
+          <% if current_user.admin == true%>
+          <i><%=link_to '', course_cohort_path(@course.id, coh.id), method: :delete, data: { confirm: "Are you sure you want to delete #{coh.name} ?", remote: true}, class:"fas fa-trash terminate"%></i>
+          <%end%>
         </p>
         <%end%>
       </div>

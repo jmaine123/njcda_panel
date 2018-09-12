@@ -4,6 +4,7 @@
       <tr class='list_header'>
         <th>First Name</th>
         <th>Last Name</th>
+        <th>Current Cohort</th>
         <% if current_user.admin === true %>
         <th>Email</th>
         <th>Age</th>
@@ -14,6 +15,7 @@
       <tr>
         <td> <%=i.first_name%></td>
         <td><%=i.last_name%></td>
+        <td><%=i.cohort.name%></td>
       <% if current_user.admin === true %>
         <td><%=i.email%></td>
         <td><%=i.age%></td>

@@ -3,15 +3,25 @@
   <tr class ='list_header'>
     <th>First Name</th>
     <th>Last Name</th>
+    <% if current_user.admin == true%>
     <th>Email</th>
     <th>Age</th>
+    <%end%>
+    <% if current_user.student != true%>
+      <th>Cohort</th>
+    <%end%>
   </tr>
   <% @students.each do |i|%>
   <tr>
     <td> <%=i.first_name%></td>
     <td><%=i.last_name%></td>
+    <% if current_user.admin == true%>
     <td><%=i.email%></td>
     <td><%=i.age%></td>
+    <%end%>
+    <% if current_user.student != true%>
+      <td><%=i.cohort.name%></td>
+    <%end%>
   </tr>
   <%end%>
 </table>

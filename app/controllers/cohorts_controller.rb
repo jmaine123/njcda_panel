@@ -41,11 +41,17 @@ class CohortsController < ApplicationController
   end
 
   def destroy
-    @cohort.students.destroy
+    @cohort.students.each do |student|
+      student.destroy
+    end
     @cohort.instructor.destroy
     @cohort.destroy
     flash[:success] = "Cohort has been deleted from the database!"
-    redirect_to course_path(@course.id)
+    # redirect_to course_path(@course.id)
+    respond_to do |format|
+      format.js
+      format.html { p 'html response'; redirect_to root_path}
+    end
   end
 
   def index
