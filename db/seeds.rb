@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+
 admin = User.create({
   first_name: 'Carl',
   last_name: 'Smikle',
@@ -27,6 +28,6 @@ courses = Course.create(
 
 cohort = Cohort.create(
   {
-    name: 'Faker'
+    name: 
   }
 )

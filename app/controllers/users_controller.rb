@@ -6,11 +6,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.type_of_user
+    p 'start'
     if @user.admin === true || Instructor.exists?(email: @user.email) || Student.exists?(email: @user.email)
       if @user.save
-        msg = "Thanks for signing up, #{@user.email}"
-        flash[:success] = msg
-        redirect_to users_path
+        p msg = "Thanks for signing up, #{@user.email}"
+        flash[:notice] = msg
+        redirect_to root_path
       else
         render 'new'
       end

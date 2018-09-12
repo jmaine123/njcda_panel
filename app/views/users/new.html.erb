@@ -11,7 +11,7 @@
 <%= f.password_field :password, placeholder: 'Create a password', class: 'password', required: true %><br><br>
 <%= f.password_field :password_confirmation, placeholder: 'Confirm your password', class: 'password', required: true %><br><br>
 
-<%=f.text_field :auth_code, placeholder: 'Authorization Code'%><br><br>
+<%=f.password_field :auth_code, placeholder: 'Authorization Code'%><br><br>
 
 <%= f.submit 'Register', class:'submit-btns'%>
 
