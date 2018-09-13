@@ -37,13 +37,14 @@ class CoursesController < ApplicationController
   end
 
   def destroy
-    # @course.destroy
-    flash[:notice] = "A Course has been deleted from the database!"
+    @course = Course.find(params[:id])
+    @course.destroy
+    p flash[:notice] = "A Course has been deleted from the database!"
     # redirect_to courses_path
     # redirect_to root_path
     respond_to do |format|
       format.js
-      format.html { p 'html response'; redirect_to root_path}
+      format.html { p 'html response'; redirect_to courses_path}
     end
   end
 

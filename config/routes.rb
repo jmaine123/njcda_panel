@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   resources :users
 
+
   resources :courses do
     resources :cohorts do
       resources :instructors
